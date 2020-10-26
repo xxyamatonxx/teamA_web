@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>確認from池田</title>
+        <title>gi清水</title>
 
 
         <!-- Fonts -->
