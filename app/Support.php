@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Support extends Model
 {
-    public function users(){
-        return $this->belongsTo('App\user');
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 
-    public function returns(){
-        return $this->belongsTo('App\return');
+    public function reward(){
+        return $this->belongsTo('App\Reward');
     }
 }
