@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -23,7 +25,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('project.create');
     }
 
     /**
@@ -34,7 +36,19 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = new Project;
+        $project->create([
+            'user_id' => Auth::id(),
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'overview' => $request->overview,
+            'image' => $request->image,
+            'target_money' => $request->target_money,
+            'start' => $request->start,
+            'end' => $request->end,
+        ]);
+
+        return view('project.success');
     }
 
     /**

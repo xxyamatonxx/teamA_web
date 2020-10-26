@@ -20,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/mypage', 'MypageController@show')->name('mypage.show');
+Route::get('/mypage', 'MypageController@show')->name('mypage.show')->middleware('auth');
 
-Route::resource('projects', 'ProjectController');
+
+Route::resource('projects', 'ProjectController',['only' => ['upate', 'create', 'edit', 'store', 'destroy']])->middleware('auth');
+Route::resource('projects', 'ProjectController',['only' => ['index', 'show']]);
+
