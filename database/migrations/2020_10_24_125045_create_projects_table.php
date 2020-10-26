@@ -20,8 +20,6 @@ class CreateProjectsTable extends Migration
             $table->text('subtitle')->nullable();
             $table->text('overview')->nullable();
             $table->string('image1')->nullable();
-            $table->string('image2')->nullable();
-            $table->string('image3')->nullable();
             $table->integer('target_money');
             $table->integer('now_support_money')->default('0');//直でいじる場合のみ使用(やらせ)
             $table->integer('now_supportors')->default('0');
