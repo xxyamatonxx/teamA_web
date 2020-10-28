@@ -22,5 +22,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/mypage', 'MypageController@show')->name('mypage.show')->middleware('auth');
 
-Route::resource('projects', 'ProjectController',['only' => ['upate', 'create', 'edit', 'store', 'destroy']])->middleware('auth');
+Route::resource('projects', 'ProjectController',['only' => ['upate', 'edit', 'destroy']])->middleware('admin_auth');
+Route::resource('projects', 'ProjectController',['only' => ['create', 'store']])->middleware('auth');
 Route::resource('projects', 'ProjectController',['only' => ['index', 'show']]);
