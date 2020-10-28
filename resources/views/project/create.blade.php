@@ -11,7 +11,7 @@
     <input type="text" name="title">
     <input type="text" name="subtitle">
     <textarea name="overview" cols="30" rows="10"></textarea>
-    <input type="file" name="image">
+    <input type="file" name="image" accept="image/png, image/jpeg">
     <input type="number" name="target_money">
     <input type="date" name="start">
     <input type="date" name="end">
