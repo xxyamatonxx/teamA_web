@@ -30,4 +30,13 @@ class HomeController extends Controller
         // dd($user_data);
         return view('home',['user_data' => $user_data]);
     }
+
+    public function edit(Request $request){
+        $id = $request->user_id;
+        $user_data = Auth::user($id);
+
+
+        return view('home',['user_data' => $user_data]);
+    }
+    
 }

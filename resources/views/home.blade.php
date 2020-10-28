@@ -16,7 +16,12 @@
 
                     お名前：{{$user_data["name"]}}<br>
                     メールアドレス：{{$user_data["email"]}}<br>
-                    
+                    <form method="post" action="{{route('edit.profile')}}">
+                    @csrf
+                    <input type="hidden" name="user_id">
+                    <input type>
+                    <button type="submit">プロフィールを編集</button>
+                    </form>
                 </div>
             </div>
         </div>
