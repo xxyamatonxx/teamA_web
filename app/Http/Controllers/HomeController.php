@@ -32,11 +32,12 @@ class HomeController extends Controller
     }
 
     public function edit(Request $request){
-        $id = $request->user_id;
-        $user_data = Auth::user($id);
+        return view('mypage_edit');
+        // $id = $request->user_id;
+        // $user_data = Auth::user($id);
 
 
-        return view('home',['user_data' => $user_data]);
+        // return view('home',['user_data' => $user_data]);
     }
     
 }
