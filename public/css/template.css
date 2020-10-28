@@ -3,3 +3,17 @@
     width: 90%;
 }
 
+.fooder {
+    background-color: whitesmoke;
+    width: 90%;
+
+
+}
+
+.fooder_a {
+    float: left;
+}
+
+ul {
+    list-style: none;
+  }
