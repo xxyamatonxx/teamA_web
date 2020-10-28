@@ -45,6 +45,8 @@ class HomeController extends Controller
         $user_id = $request->user_id;
         $user_data = Auth::user($user_id);
         $user = \Auth::user();
+        $user->name = $request->get('new-name');
+        $user->email = $request->get('new-email');
         $user->password = bcrypt($request->get('new-password'));
         // $password = $user->password;
         // dd($password);

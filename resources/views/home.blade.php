@@ -16,6 +16,10 @@
 
                     お名前：{{$user_data["name"]}}<br>
                     メールアドレス：{{$user_data["email"]}}<br>
+                    <?php $password=$user_data["password"];
+                    $hidden_pass = str_repeat('*', strlen($password));
+                    echo "パスワード" . "：" . $hidden_pass?>
+                    
                     <form method="post" action="{{route('edit.profile')}}">
                     @csrf
                     <input type="hidden" name= "user_id" value="{{$user_data['id']}}">

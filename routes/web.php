@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/mypage', 'MypageController@show')->name('mypage.show')->middleware('auth');
+//Route::get('/mypage', 'MypageController@show')->name('mypage.show')->middleware('auth');
 Route::post('/edit', 'HomeController@show')->name('edit.profile');
 Route::get('/edit', 'HomeController@show')->name('edit.profile.show');
 Route::post('/editprofile', 'HomeController@edit')->name('edit.data');
