@@ -2,6 +2,14 @@
     float: left;
     height: 404px;
     width: 281.66px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    float: left;
+    padding: 50px;
+    border: solid 3px #6091d3;
+    border-radius: 10px;
+    margin: 30px;
 }
 
 .project_all{

@@ -11,15 +11,15 @@ class Project extends Model
         return $this->belongsTo('App\User');
     }
     public function rewards(){
-        return $this->hasMany('App\Rewards');
+        return $this->hasMany('App\Reward');
     }
     protected $fillable = [
+        'user_id',
+        'release',
         'title',
         'subtitle',
         'overview',
-        'image1',
-        'image2',
-        'image3',
+        'image',
         'target_money',
         'now_support_money',
         'now_supportors',

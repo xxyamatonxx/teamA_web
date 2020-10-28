@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('マイページ') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,11 +14,19 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    お名前：{{$user_data["name"]}}<br>
+                    メールアドレス：{{$user_data["email"]}}<br>
+                    <form method="post" action="{{route('edit.profile')}}">
+                    @csrf
+                    <input type="hidden" name="user_id">
+                    <button type="submit">プロフィールを編集</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
 
