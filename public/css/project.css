@@ -1,5 +1,4 @@
 .box{
-    float: left;
     height: 404px;
     width: 281.66px;
     display: flex;
@@ -26,6 +25,7 @@
     height: 58px;
     width: 250.66px;
     text-align: center;
+    color: red;
     font-weight: normal;
     font-size: 12px;
 }
