@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/mypage', 'MypageController@show')->name('mypage.show');
+Route::get('/project','ProjectController@index')->name('project.index');
+
+

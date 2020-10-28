@@ -1,0 +1,23 @@
+.box{
+    float: left;
+    height: 404px;
+    width: 281.66px;
+}
+
+.project_all{
+    height: 360px;
+    width: 250.66px;
+}
+
+.project_image{
+    height: 159.77px;
+    width: 250.66px
+}
+
+.project_title{
+    height: 58px;
+    width: 250.66px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
+}
