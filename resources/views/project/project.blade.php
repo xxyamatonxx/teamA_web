@@ -4,6 +4,7 @@
  
  <!--プロジェクト一覧-->
  @foreach ($projects as $project)
+    <a href="{{ route('projects.show' , $project->id )}}">
     <div class="box">
      <div class="project_all">
       <div class="project_image">
@@ -21,6 +22,7 @@
       </div>
      </div>
      </div>
+     </a>
 
  @endforeach
 
