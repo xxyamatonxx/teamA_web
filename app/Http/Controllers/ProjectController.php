@@ -50,7 +50,7 @@ class ProjectController extends Controller
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'overview' => $request->overview,
-            'image' => $request->image,
+            'image' => $request->file('image')->store('public/images'),
             'target_money' => $request->target_money,
             'start' => $request->start,
             'end' => $request->end,
