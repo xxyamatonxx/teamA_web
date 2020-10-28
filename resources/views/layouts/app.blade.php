@@ -18,8 +18,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<<<<<<< HEAD
     <link href="{{ asset('css/template.css') }}" rel="stylesheet">
     
+=======
+    <link href="{{ asset('css/template.css') }}?<?php echo date("Ymd-His"); ?>" rel="stylesheet">
+    <link href="{{ asset('css/project.css') }}?<?php echo date("Ymd-His"); ?>" rel="stylesheet">
+
+>>>>>>> 59a4f6dba57a7b835e5701faeb25a92d6018bf70
 </head>
 
 <body>
@@ -27,7 +33,11 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+<<<<<<< HEAD
                     Saitechクラウド
+=======
+                    新人エンジニア向けクラウドファンディング
+>>>>>>> 59a4f6dba57a7b835e5701faeb25a92d6018bf70
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

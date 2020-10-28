@@ -1,0 +1,41 @@
+.box{
+    height: 404px;
+    width: 281.66px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    float: left;
+    padding: 50px;
+    border: solid 3px #6091d3;
+    border-radius: 10px;
+    margin: 30px;
+    color: black;
+}
+
+.project_all{
+    height: 360px;
+    width: 250.66px;
+}
+
+.project_image{
+    height: 159.77px;
+    width: 250.66px
+}
+
+.project_title{
+    height: 58px;
+    width: 250.66px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.project_now{
+    width: 250.66px;
+    height: 110px;
+    text-align: left;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
