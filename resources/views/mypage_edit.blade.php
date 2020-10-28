@@ -29,8 +29,9 @@
 
                 {{-- フォーム --}}
                 <div class="card-body">
-                    <form method="post" action="{{route('edit.profile')}}">
+                    <form method="post" action="{{route('edit.data')}}">
                         @csrf
+                        <input type="hidden" name="{{$user_id}}">
                         <div class="form-group">
                             <label for="current">現在のパスワード</label>
                             <div>
