@@ -3,7 +3,9 @@
 @section('content')
 
 <h2>投稿フォーム</h2>
-
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
 <form action="{{ route('projects.store') }}" method="post">
     @csrf
     <input type="text" name="title">

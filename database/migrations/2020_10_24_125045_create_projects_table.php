@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->text('subtitle')->nullable();
             $table->text('overview')->nullable();
             $table->string('image')->nullable();
-            $table->integer('target_money');
+            $table->unsignedInteger('target_money');
             $table->integer('now_support_money')->default('0');//直でいじる場合のみ使用(やらせ)
             $table->integer('now_supportors')->default('0');
             $table->date('start')->nullable();

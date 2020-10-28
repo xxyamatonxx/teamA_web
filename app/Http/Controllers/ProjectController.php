@@ -36,8 +36,15 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $project = new Project;
-        $project->create([
+        //バリデーション
+        $rules = [
+        'title' => ['required', 'between:1,40'],
+        'target_money' => ['required', 'integer', 'min:1']
+        ];
+        $this->validate($request, $rules);
+        
+        //プロジェクト申請
+        Project::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'subtitle' => $request->subtitle,
