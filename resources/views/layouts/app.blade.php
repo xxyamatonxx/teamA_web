@@ -18,7 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/template.css') }}?<?php echo date("Ymd-His"); ?>" rel="stylesheet">
+    <link href="{{ asset('css/project.css') }}?<?php echo date("Ymd-His"); ?>" rel="stylesheet">
+
 </head>
 
 <body>

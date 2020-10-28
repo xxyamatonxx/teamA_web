@@ -15,7 +15,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::all();
+        return view ('project.project',compact('projects'));
     }
 
     /**
@@ -49,7 +50,7 @@ class ProjectController extends Controller
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'overview' => $request->overview,
-            'image' => $request->image,
+            'image' => $request->file('image')->store('public/images'),
             'target_money' => $request->target_money,
             'start' => $request->start,
             'end' => $request->end,
@@ -66,7 +67,8 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::find($id);
+        return view ('project.show',compact('project'));
     }
 
     /**
@@ -102,4 +104,9 @@ class ProjectController extends Controller
     {
         //
     }
+
+   
+ 
+
+
 }

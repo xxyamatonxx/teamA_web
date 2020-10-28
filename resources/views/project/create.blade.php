@@ -6,7 +6,7 @@
 @foreach ($errors->all() as $error)
   <li>{{$error}}</li>
 @endforeach
-<form action="{{ route('projects.store') }}" method="post">
+<form action="{{ route('projects.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <input type="text" name="title">
     <input type="text" name="subtitle">
