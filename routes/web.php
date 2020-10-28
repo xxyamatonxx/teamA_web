@@ -20,8 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/mypage', 'MypageController@show')->name('mypage.show')->middleware('auth');
-Route::post('/editprofile', 'HomeController@edit')->name('edit.profile');
+//Route::get('/mypage', 'MypageController@show')->name('mypage.show')->middleware('auth');
+Route::post('/edit', 'HomeController@show')->name('edit.profile');
+Route::get('/edit', 'HomeController@show')->name('edit.profile.show');
+Route::post('/editprofile', 'HomeController@edit')->name('edit.data');
 Route::resource('projects', 'ProjectController',['only' => ['upate', 'edit', 'destroy']])->middleware('admin_auth');
 Route::resource('projects', 'ProjectController',['only' => ['create', 'store']])->middleware('auth');
 Route::resource('projects', 'ProjectController',['only' => ['index', 'show']]);

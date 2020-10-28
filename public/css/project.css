@@ -9,6 +9,7 @@
     border: solid 3px #6091d3;
     border-radius: 10px;
     margin: 30px;
+    color: black;
 }
 
 .project_all{
@@ -25,7 +26,16 @@
     height: 58px;
     width: 250.66px;
     text-align: center;
-    color: red;
     font-weight: normal;
     font-size: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.project_now{
+    width: 250.66px;
+    height: 110px;
+    text-align: left;
+    background-color: cadetblue;
+    border-radius: 10px;
 }
