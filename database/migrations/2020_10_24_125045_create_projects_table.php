@@ -16,11 +16,12 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->boolean('release')->default(0);
             $table->char('title',40);
             $table->text('subtitle')->nullable();
             $table->text('overview')->nullable();
-            $table->string('image1')->nullable();
-            $table->integer('target_money');
+            $table->string('image')->nullable();
+            $table->unsignedInteger('target_money');
             $table->integer('now_support_money')->default('0');//直でいじる場合のみ使用(やらせ)
             $table->integer('now_supportors')->default('0');
             $table->date('start')->nullable();
