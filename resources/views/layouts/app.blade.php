@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>新人エンジニア向けクラウドファンディング</title>
+    <title>Saitechクラウド</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    新人エンジニア向けクラウドファンディング
+                   <p>新人エンジニア向けクラウドファンディング</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -80,8 +80,22 @@
             @yield('content')
         </main>
     </div>
-    <fooder>
-    
+
+    <fooder class="fooder">
+      <section class="fooder_a">
+       <ul>Saitechクラウド
+         <li><a>利用規約</a></li>
+         <li>お問い合わせ</li>
+        </ul>
+      </section>
+
+      <section class="fooder_a">
+        <ul>運営会社
+          <li><a href="https://sa-i.jp">SAi Tech</a></li>
+        </ul>
+        </section>
+
+
     </fooder>
 </body>
 </html>
