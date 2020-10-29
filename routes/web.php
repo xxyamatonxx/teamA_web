@@ -24,14 +24,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/edit', 'HomeController@show')->name('edit.profile');
 Route::get('/edit', 'HomeController@show')->name('edit.profile.show');
 Route::post('/editprofile', 'HomeController@edit')->name('edit.data');
-Route::resource('projects', 'ProjectController',['only' => ['destroy']])->middleware('admin_auth');
-Route::resource('projects', 'ProjectController',['only' => ['create','store','edit','upate']])->middleware('auth');
-Route::resource('projects', 'ProjectController',['only' => ['index', 'show']]);
+Route::resource('projects', 'ProjectController', ['only' => ['destroy']])->middleware('admin_auth');
+Route::resource('projects', 'ProjectController', ['only' => ['create', 'store', 'edit', 'upate']])->middleware('auth');
+Route::resource('projects', 'ProjectController', ['only' => ['index', 'show']]);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin_auth'], function () {
-    Route::get('/','AdminController@index')->name('admin.index');
-    Route::get('/projects','ProjectController@index')->name('admin.projects_release');
-    Route::get('/projects/request','AdminController@request_projects')->name('admin.projects_request');
-    Route::get('/project/request/edit/{id}','AdminController@edit')->name('admin.release_project_edit');
-    Route::post('/project/request/update/{id}','AdminController@update')->name('admin.release_project_update');
+    Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::get('/projects', 'AdminController@projects')->name('admin.projects_release');
+    Route::get('/projects/request', 'AdminController@request_projects')->name('admin.projects_request');
+    Route::get('/project/request/edit/{id}', 'AdminController@edit')->name('admin.release_project_edit');
+    Route::post('/project/request/update/{id}', 'AdminController@update')->name('admin.release_project_update');
 });

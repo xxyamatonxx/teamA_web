@@ -2,11 +2,13 @@
 @section('content')
 
 
-<a href="/admin"><h3>管理者ページ</h3></a>
+<a href="/admin">
+    <h3>管理者ページ</h3>
+</a>
 <p>申請中プロジェクト一覧</p>
 <!--プロジェクト一覧-->
 <div class="container">
-    @foreach ($projects as $project)
+    @forelse ($projects as $project)
     <a href="{{ route('projects.show' , $project->id )}}">
         <div class="all_page">
             <div class="box">
@@ -27,8 +29,10 @@
                 </div>
             </div>
         </div>
-        <a href="/admin/project/request/edit/{{$project->id}}">公開設定</a>
+        <a href="{{route('admin.release_project_edit',$project->id)}}">公開設定</a>
     </a>
-    @endforeach
+    @empty
+    <h3>申請中のプロジェクトはありません。</h3>
+    @endforelse
 </div>
 @endsection
