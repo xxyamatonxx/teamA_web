@@ -12,7 +12,7 @@
             <div class="box">
                 <div class="project_all">
                     <div class="project_image">
-                        <img src="{{ Storage::url($project->image) }}" alt="{{$project->title}}の画像">
+                        <!-- <img src="{{ Storage::url($project->image) }}" alt="{{$project->title}}の画像"> -->
                     </div>
                     <!--プロジェクトタイトル表示-->
                     <div class="project_title">
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <a href="request/edit/{{$project->id}}">公開設定</a>
+        <a href="/admin/project/request/edit/{{$project->id}}">公開設定</a>
     </a>
     @endforeach
 </div>

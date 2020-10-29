@@ -24,4 +24,15 @@ class AdminController extends Controller
             $user = $project->user;
             return view('admin.edit',compact('project','user'));
     }
+
+    public function update(Request $request,$id){
+        $rules = [
+        'release' => ['required'],
+        ];
+        $this->validate($request, $rules);
+        $project = Project::find($id);
+        $project->release = $request->release;
+        $project->save();
+        return redirect(route('admin.projects_request'));
+    }
 }

@@ -15,4 +15,16 @@
 <p>公開予定日：{{$project->start}}</p>
 <p>終了予定日：{{$project->end}}</p>
 </div>
+
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
+
+<form action="/admin/project/request/update/{{$project->id}}" method ="post">
+@csrf
+<input type="radio" name="release" value="0">非公開
+<input type="radio" name="release" value="1">公開
+<input type="submit" value="更新">
+</form>
+
 @endsection
