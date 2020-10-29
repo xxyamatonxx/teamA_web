@@ -32,5 +32,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_auth'], function () {
     Route::get('/','AdminController@index')->name('admin.index');
     Route::get('/projects','ProjectController@index')->name('admin.projects_release');
     Route::get('/projects/request','AdminController@request_projects')->name('admin.projects_request');
-    Route::get('/projects/request/{id}','ProjectController@show')->name('admin.release_projects_show');
+    Route::get('/projects/request/edit/{id}','AdminController@edit')->name('admin.release_projects_edit');
 });

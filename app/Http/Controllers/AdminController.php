@@ -18,4 +18,10 @@ class AdminController extends Controller
     public function show(){
 
     }
+
+        public function edit($id){
+            $project = Project::find($id);
+            $user = $project->user;
+            return view('admin.edit',compact('project','user'));
+    }
 }
