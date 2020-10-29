@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Reward;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
@@ -64,6 +65,19 @@ class ProjectController extends Controller
             'start' => $request->start,
             'end' => $request->end,
         ]);
+
+        //リターン申請
+        Reward::create([
+            'user_id' => Auth::id(),
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'overview' => $request->overview,
+            'image' => $request->file('image')->storeAs('public/images', $image),
+            'target_money' => $request->target_money,
+            'start' => $request->start,
+            'end' => $request->end,
+        ]);
+
 
         return view('project.success');
     }
