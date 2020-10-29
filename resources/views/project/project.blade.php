@@ -10,7 +10,7 @@
     <div class="box">
      <div class="project_all">
       <div class="project_image">
-      <!--ここに画像について書く-->
+      <img src="{{ Storage::url($project->image) }}">
       </div>
       <!--プロジェクトタイトル表示-->
       <div class="project_title">
