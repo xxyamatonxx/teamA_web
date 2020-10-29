@@ -3,8 +3,10 @@
 @section('content')
  
  <!--プロジェクト一覧-->
+ <div class="container">
  @foreach ($projects as $project)
     <a href="{{ route('projects.show' , $project->id )}}">
+    <div class="all_page">
     <div class="box">
      <div class="project_all">
       <div class="project_image">
@@ -19,11 +21,16 @@
       <P>現在:{{$project->now_support_money}}円</P>
       <p>支援者:{{$project->now_supportors}}人</p>
       <p>終了日:{{$project->end}}</p>
+      
       </div>
      </div>
      </div>
      </a>
 
  @endforeach
+</div>
+ 
+ 
+
 
 @endsection

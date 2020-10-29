@@ -39,3 +39,22 @@
     background-color: cadetblue;
     border-radius: 10px;
 }
+
+.show_title{
+    width:  1200px;
+    height: 145.11px;
+    text-align: center;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    padding: 20px;
+}
+
+.show_image{
+    width: 650px;
+    height:432.95px;
+    margin: 20px;
+    float: left;
+}
+
+
