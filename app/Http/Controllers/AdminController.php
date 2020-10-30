@@ -16,13 +16,13 @@ class AdminController extends Controller
     //公開中のプロジェクト一覧
     public function projects()
     {
-        $projects = Project::where('release', true)->get();
+        $projects = Project::where('release', true)->orderBy('id','desc')->get();
         return view('admin.release_projects', compact('projects'));
     }
     //申請中のプロジェクト一覧
     public function request_projects()
     {
-        $projects = Project::where('release', false)->get();
+        $projects = Project::where('release', false)->orderBy('id', 'desc')->get();
         return view('admin.projects_request', compact('projects'));
     }
     public function destroy()

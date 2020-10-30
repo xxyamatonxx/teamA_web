@@ -17,3 +17,45 @@
 ul {
     list-style: none;
   }
+label{
+    display: block;
+}
+form{
+    background-color: #eaeaea;
+    width: 100%;
+    padding:30px 50px;
+}
+form dl{
+    width: 80%;
+    margin:10px 10%;
+}
+form dl dt{
+  width: 159px;
+  padding:5px 0;
+  float:left;
+  clear:both;
+}
+
+form dl dd{
+  padding:10px 0;
+}
+.reward-box{
+    flex-direction: row;
+    justify-content: center;
+    background-color: #e3e4e8;
+}
+.project-detail{
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    width: 40%;
+}
+.flex{
+    display: flex;
+}
+.show_img{
+    max-width: 500px;
+    max-height: 500px;
+}

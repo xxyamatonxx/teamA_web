@@ -27,6 +27,7 @@ Route::get('/edit', 'HomeController@show')->name('edit.profile.show');
 Route::post('/editprofile', 'HomeController@edit')->name('edit.data');
 Route::resource('projects', 'ProjectController', ['only' => ['destroy']])->middleware('admin_auth');
 Route::resource('projects', 'ProjectController', ['only' => ['create', 'store', 'edit', 'upate']])->middleware('auth');
+Route::resource('projects', 'ProjectController')->middleware('auth');
 Route::resource('projects', 'ProjectController', ['only' => ['index', 'show']]);
 Route::get('/project/{id}/add/reward', 'RewardController@create')->name('reward.create')->middleware('auth');//プロジェクトにリターン追加(mypageからのみ)
 Route::post('/project/{id}/add/reward', 'RewardController@store')->name('reward.store')->middleware('auth');//リターン追加保存処理

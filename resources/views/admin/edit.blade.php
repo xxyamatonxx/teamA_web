@@ -3,15 +3,16 @@
 
 <p>ユーザー名：{{$user->name}}</p>
 
-<div>
-  <h4>プロジェクト詳細</h4>
-  <p>タイトル：{{$project->title}}</p>
-  <img src="{{ Storage::url($project->image) }}" alt="{{$project->title}}の画像">
-  <p>サブタイトル：{{$project->title}}</p>
-  <p>説明：{{$project->title}}</p>
-  <p>目標金額：{{$project->target_money}}</p>
-  <p>公開予定日：{{$project->start}}</p>
-  <p>終了予定日：{{$project->end}}</p>
+<h3>タイトル：{{$project->title}}</h3>
+<div class="flex reward-box">
+  <img class="show_img" src="{{ Storage::url($project->image) }}">
+  <!--プロジェクト詳細↓-->
+  <div class="project-detail">
+    <p>{{$project->overview}}</p>
+    <p class="">目標金額:<span class="">{{$project->now_support_money}}</span>円</p>
+    <p class="">支援者:<span class="">{{$project->now_supportors}}</span>人</p>
+    <p class="">終了日:<span class="">{{$project->end}}</span></p>
+  </div>
 </div>
 
 

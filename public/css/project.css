@@ -11,6 +11,9 @@
     margin: 30px;
     color: black;
 }
+.flex{
+    display: flex;
+}
 
 .project_all{
     height: 360px;
@@ -56,6 +59,10 @@
     margin: 20px;
     float: left;
     padding: 20px;
+}
+.show_img{
+    max-width: 500px;
+    max-height: 500px;
 }
 
 .show_overview {
@@ -130,4 +137,22 @@ p.now{
     top: 25px;
     font-family: sans-serif;
     color: white;
+}
+
+/* プロジェクト申請ページ */
+
+
+/* リターン追加ページ */
+.reward-box{
+    flex-direction: row;
+    justify-content: center;
+    background-color: #e3e4e8;
+}
+.project-detail{
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    width: 40%;
 }

@@ -45,6 +45,8 @@ class ProjectController extends Controller
             'overview' => ['required'],
             'target_money' => ['required', 'integer', 'min:1','max:10000000'],
             'image' => ['required','file', 'image', 'mimes:png,jpeg'],
+            'start' => ['required', 'date', 'date_format:Y-m-d','after:'.date('Y-m-d')],
+            'end' => ['required', 'date', 'date_format:Y-m-d','after:start'],
         ];
         $this->validate($request, $rules);
 
