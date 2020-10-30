@@ -1,7 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
-
-<h3>管理者ページ</h3>
 
 <p>ユーザー名：{{$user->name}}</p>
 

@@ -1,9 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 
 
-<a href="/admin">
-    <h3>管理者ページ</h3>
 </a>
 <p>申請中プロジェクト一覧</p>
 <!--プロジェクト一覧-->
