@@ -13,7 +13,7 @@ class RewardController extends Controller
     {
         $project = Project::find($id);
         $user = $project->user->id;
-        
+
 //プロジェクトを保持してるユーザーのみリターンの申請が可能
         if (Auth::id() === $user) {
             return view('reward.create', compact('project'));
@@ -24,6 +24,14 @@ class RewardController extends Controller
 
     public function store(Request $request, $id)
     {
+        //バリデーション
+        $rules = [
+            'title' => ['required', 'between:1,40'],
+            'overview' => ['required'],
+            'price' => ['required', 'integer', 'min:1','max:1000000'],
+        ];
+        $this->validate($request, $rules);
+
         Reward::create([
             'project_id' => $id,
             'title' => $request->title,
