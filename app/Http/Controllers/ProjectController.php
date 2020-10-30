@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Reward;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +18,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view ('project.project',compact('projects'));
+        return view('project.project', compact('projects'));
     }
 
     /**
@@ -39,25 +41,33 @@ class ProjectController extends Controller
     {
         //バリデーション
         $rules = [
-        'title' => ['required', 'between:1,40'],
-        'target_money' => ['required', 'integer', 'min:1']
+            'title' => ['required', 'between:1,40'],
+            'overview' => ['required'],
+            'target_money' => ['required', 'integer', 'min:1','max:10000000'],
+            'image' => ['required','file', 'image', 'mimes:png,jpeg'],
         ];
         $this->validate($request, $rules);
-        
+
+        //画像の処理
+        $image = $request->file('image');
+        if ($request->hasFile('image') && $image->isValid()) {
+            $image = $image->getClientOriginalName();
+        }
         //プロジェクト申請
         Project::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'overview' => $request->overview,
-            'image' => $request->file('image')->store('public/images'),
+            'image' => $request->file('image')->storeAs('public/images', $image),
             'target_money' => $request->target_money,
             'start' => $request->start,
             'end' => $request->end,
         ]);
-
-        return view('project.success');
+        $project = Project::orderBy('id','desc')->get()->first();
+        return redirect(route('reward.create',$project->id));
     }
+
 
     /**
      * Display the specified resource.
@@ -68,7 +78,7 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::find($id);
-        return view ('project.show',compact('project'));
+        return view('project.show', compact('project'));
     }
 
     /**
@@ -104,9 +114,4 @@ class ProjectController extends Controller
     {
         //
     }
-
-   
- 
-
-
 }
