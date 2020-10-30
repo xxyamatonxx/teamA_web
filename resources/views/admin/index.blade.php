@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 
-<h3>管理者ページ</h3>
 <button>
 <a href="{{route('admin.projects_release')}}">公開プロジェクト一覧</a>
 </button>

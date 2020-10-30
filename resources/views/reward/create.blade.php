@@ -3,29 +3,16 @@
 @section('content')
 
 <h2>リターン追加フォーム</h2>
-<!--プロジェクト一覧-->
-<div class="container">
-  <a href="{{ route('projects.show' , $project->id )}}">
-    <div class="all_page">
-      <div class="box">
-        <div class="project_all">
-          <div class="project_image">
-            <img src="{{ Storage::url($project->image) }}">
-          </div>
-          <!--プロジェクトタイトル表示-->
-          <div class="project_title">
-            <p>{{$project->title}}</p>
-          </div>
-          <!--プロジェクトの現状(現在金額、支援者、終了日)-->
-          <div class="project_now">
-            <P>現在:{{$project->now_support_money}}円</P>
-            <p>支援者:{{$project->now_supportors}}人</p>
-            <p>終了日:{{$project->end}}</p>
-
-          </div>
-        </div>
-      </div>
-  </a>
+<h3>タイトル：{{$project->title}}</h3>
+<div class="flex reward-box">
+  <img class="show_img" src="{{ Storage::url($project->image) }}">
+  <!--プロジェクト詳細↓-->
+  <div class="project-detail">
+    <p>{{$project->overview}}</p>
+    <p class="">目標金額:<span class="">{{$project->now_support_money}}</span>円</p>
+    <p class="">支援者:<span class="">{{$project->now_supportors}}</span>人</p>
+    <p class="">終了日:<span class="">{{$project->end}}</span></p>
+  </div>
 </div>
 
 @foreach ($errors->all() as $error)
@@ -33,12 +20,16 @@
 @endforeach
 <form action="{{ route('reward.store',$project->id) }}" method="post">
   @csrf
-  <input type="text" name="title">
-  <textarea name="overview" cols="30" rows="10"></textarea>
-  <input type="number" name="price">
-  <input type="submit" value="リターンを追加する">
-
-
+  <dl>
+    <dt>タイトル</dt>
+    <dd><input type="text" name="title"></dd>
+    <dt>詳細</dt>
+    <dd><textarea name="overview" cols="30" rows="10"></textarea></dd>
+    <dt>金額</dt>
+    <dd><input type="number" name="price"></dd>
+    <dd></dd>
+    <dd><input type="submit" value="リターンを追加する"></dd>
+  </dl>
 </form>
 
 

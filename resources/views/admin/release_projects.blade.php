@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 
-
-<a href="/admin">
-  <h3>管理者ページ</h3>
 </a>
 <p>公開中プロジェクト一覧</p>
 <!--プロジェクト一覧-->
@@ -14,7 +11,7 @@
       <div class="box">
         <div class="project_all">
           <div class="project_image">
-            <!-- <img src="{{ Storage::url($project->image) }}" alt="{{$project->title}}の画像"> -->
+            <img class="show_img" src="{{ Storage::url($project->image) }}" alt="{{$project->title}}の画像">
           </div>
           <!--プロジェクトタイトル表示-->
           <div class="project_title">

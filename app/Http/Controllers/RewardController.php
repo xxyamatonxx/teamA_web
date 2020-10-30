@@ -40,4 +40,9 @@ class RewardController extends Controller
         ]);
         return view('success');
     }
+
+    public function show($id){
+        $reward = Reward::find($id);
+        return view('reward.show',compact('reward'));
+    }
 }
