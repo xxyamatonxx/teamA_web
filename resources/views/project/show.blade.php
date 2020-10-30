@@ -5,7 +5,7 @@
   <h1>{{$project->title}}</h1>
 </div>
 <div class="show_image">
-  <img src="{{ Storage::url($project->image) }}">
+  <img class="show_img" src="{{ Storage::url($project->image) }}">
 </div>
 <!--プロジェクト詳細↓-->
 <div class="show_overview">
