@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Project;
+use App\User;
 
 
 class HomeController extends Controller
@@ -27,8 +29,9 @@ class HomeController extends Controller
     {
         $id = $request->id;
         $user_data = Auth::user($id);
+        $projects = Auth::user($id)->projects->all();
         // dd($user_data);
-        return view('home',['user_data' => $user_data]);
+        return view('home',['user_data' => $user_data,'projects' => $projects]);
     }
 
     public function show(Request $request){
@@ -44,7 +47,7 @@ class HomeController extends Controller
         ]);
         $user_id = $request->user_id;
         $user_data = Auth::user($user_id);
-        $user = \Auth::user();
+        $user = Auth::user();
         $user->name = $request->get('new-name');
         $user->email = $request->get('new-email');
         $user->password = bcrypt($request->get('new-password'));
