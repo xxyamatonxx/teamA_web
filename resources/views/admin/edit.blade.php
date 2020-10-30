@@ -15,12 +15,14 @@
   </div>
 </div>
 
-
+<h4>リターン一覧</h4>
 @foreach ($rewards as $reward)
-<div>
-  <p>タイトル:{{$reward->title}}</p>
-  <p>説明:{{$reward->overview}}</p>
-  <p>金額:{{$reward->price}}</p>
+<div class="reward">
+  <a href="{{route('reward.show',$reward->id)}}">
+    <p>タイトル:{{$reward->title}}</p>
+    <p>説明:{{$reward->overview}}</p>
+    <p>金額:{{$reward->price}}</p>
+  </a>
 </div>
 @endforeach
 
@@ -29,10 +31,10 @@
 @endforeach
 
 <form action=" {{route('admin.release_project_update',$project->id)}}" method="post">
-      @csrf
-      <input type="radio" name="release" value="0">非公開
-      <input type="radio" name="release" value="1">公開
-      <input type="submit" value="更新">
-  </form>
+  @csrf
+  <input type="radio" name="release" value="0">非公開
+  <input type="radio" name="release" value="1">公開
+  <input type="submit" value="更新">
+</form>
 
-  @endsection
+@endsection

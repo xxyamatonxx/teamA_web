@@ -59,3 +59,11 @@ form dl dd{
     max-width: 500px;
     max-height: 500px;
 }
+.reward{
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #e3e4e8;
+    width: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}

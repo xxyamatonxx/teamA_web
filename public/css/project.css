@@ -156,3 +156,7 @@ p.now{
     text-align: center;
     width: 40%;
 }
+/* リターン関連 */
+.reward{
+    margin: 10px;
+}
