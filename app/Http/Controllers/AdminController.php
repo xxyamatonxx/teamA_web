@@ -25,9 +25,6 @@ class AdminController extends Controller
         $projects = Project::where('release', false)->get();
         return view('admin.projects_request', compact('projects'));
     }
-    public function show()
-    {
-    }
     public function destroy()
     {
     }

@@ -32,9 +32,9 @@ Route::get('/project/{id}/add/reward', 'RewardController@create')->name('reward.
 Route::post('/project/{id}/add/reward', 'RewardController@store')->name('reward.store')->middleware('auth');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin_auth'], function () {
-    Route::get('/', 'AdminController@index')->name('admin.index');
-    Route::get('/projects', 'AdminController@projects')->name('admin.projects_release');
-    Route::get('/projects/request', 'AdminController@request_projects')->name('admin.projects_request');
-    Route::get('/project/request/edit/{id}', 'AdminController@edit')->name('admin.release_project_edit');
-    Route::post('/project/request/update/{id}', 'AdminController@update')->name('admin.release_project_update');
+    Route::get('/', 'AdminController@index')->name('admin.index');//ボタンページ
+    Route::get('/projects', 'AdminController@projects')->name('admin.projects_release');//公開中のプロジェクト一覧
+    Route::get('/projects/request', 'AdminController@request_projects')->name('admin.projects_request');//申請中のプロジェクト一覧
+    Route::get('/project/request/edit/{id}', 'AdminController@edit')->name('admin.release_project_edit');//プロジェクトの公開・非公開設定+詳細
+    Route::post('/project/request/update/{id}', 'AdminController@update')->name('admin.release_project_update');//プロジェクトの公開・非公開設定保存
 });

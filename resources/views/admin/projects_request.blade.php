@@ -9,7 +9,8 @@
 <!--プロジェクト一覧-->
 <div class="container">
     @forelse ($projects as $project)
-    <a href="{{ route('projects.show' , $project->id )}}">
+    <a href="{{route('admin.release_project_edit',$project->id)}}">公開設定</a>
+    <a href="{{ route('admin.release_project_edit',$project->id )}}">
         <div class="all_page">
             <div class="box">
                 <div class="project_all">
@@ -29,7 +30,6 @@
                 </div>
             </div>
         </div>
-        <a href="{{route('admin.release_project_edit',$project->id)}}">公開設定</a>
     </a>
     @empty
     <h3>申請中のプロジェクトはありません。</h3>
