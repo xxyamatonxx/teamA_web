@@ -28,11 +28,11 @@
 <li>{{$error}}</li>
 @endforeach
 
-<form action="{{route('admin.release_project_update',$project->id)}}" method="post">
-  @csrf
-  <input type="radio" name="release" value="0">非公開
-  <input type="radio" name="release" value="1">公開
-  <input type="submit" value="更新">
-</form>
+<form action=" {{route('admin.release_project_update',$project->id)}}" method="post">
+      @csrf
+      <input type="radio" name="release" value="0">非公開
+      <input type="radio" name="release" value="1">公開
+      <input type="submit" value="更新">
+  </form>
 
-@endsection
+  @endsection
