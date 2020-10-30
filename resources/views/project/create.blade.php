@@ -16,6 +16,8 @@
     <input type="date" name="start">
     <input type="date" name="end">
     <input type="submit" value="申請する">
+
+    
 </form>
 
 

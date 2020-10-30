@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::post('/editprofile', 'HomeController@edit')->name('edit.data');
 Route::resource('projects', 'ProjectController', ['only' => ['destroy']])->middleware('admin_auth');
 Route::resource('projects', 'ProjectController', ['only' => ['create', 'store', 'edit', 'upate']])->middleware('auth');
 Route::resource('projects', 'ProjectController', ['only' => ['index', 'show']]);
+Route::get('/project/{id}/add/reward', 'RewardController@create')->name('reward.create')->middleware('auth');
+Route::post('/project/{id}/add/reward', 'RewardController@store')->name('reward.store')->middleware('auth');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin_auth'], function () {
     Route::get('/', 'AdminController@index')->name('admin.index');
