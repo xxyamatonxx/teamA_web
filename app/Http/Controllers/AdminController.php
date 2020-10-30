@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Reward;
 
 class AdminController extends Controller
 {
@@ -34,8 +35,9 @@ class AdminController extends Controller
     public function edit($id)
     {
         $project = Project::find($id);
+        $rewards = Reward::where('project_id',$id)->get();
         $user = $project->user;
-        return view('admin.edit', compact('project', 'user'));
+        return view('admin.edit', compact('project', 'user','rewards'));
     }
     //申請中のプロジェクトの公開・非公開設定保存
     public function update(Request $request, $id)

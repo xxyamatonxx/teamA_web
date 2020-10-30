@@ -16,6 +16,15 @@
   <p>終了予定日：{{$project->end}}</p>
 </div>
 
+
+@foreach ($rewards as $reward)
+<div>
+  <p>タイトル:{{$reward->title}}</p>
+  <p>説明:{{$reward->overview}}</p>
+  <p>金額:{{$reward->price}}</p>
+</div>
+@endforeach
+
 @foreach ($errors->all() as $error)
 <li>{{$error}}</li>
 @endforeach

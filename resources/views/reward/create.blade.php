@@ -28,9 +28,6 @@
   </a>
 </div>
 
-
-
-
 @foreach ($errors->all() as $error)
 <li>{{$error}}</li>
 @endforeach
@@ -39,7 +36,7 @@
   <input type="text" name="title">
   <textarea name="overview" cols="30" rows="10"></textarea>
   <input type="number" name="price">
-  <input type="submit" value="リターンを申請する">
+  <input type="submit" value="リターンを追加する">
 
 
 </form>
