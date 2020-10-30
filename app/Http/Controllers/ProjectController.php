@@ -43,7 +43,7 @@ class ProjectController extends Controller
         $rules = [
             'title' => ['required', 'between:1,40'],
             'overview' => ['required'],
-            'target_money' => ['required', 'integer', 'min:1'],
+            'target_money' => ['required', 'integer', 'min:1','max:10000000'],
             'image' => ['required','file', 'image', 'mimes:png,jpeg'],
         ];
         $this->validate($request, $rules);
