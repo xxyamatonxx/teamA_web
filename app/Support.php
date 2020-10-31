@@ -13,4 +13,8 @@ class Support extends Model
     public function reward(){
         return $this->belongsTo('App\Reward');
     }
+    protected $fillable = [
+        'user_id',
+        'reward_id',
+    ];
 }

@@ -32,5 +32,7 @@
     </div>
 </div>
 
+@include('project.project_template')
+
 @endsection
 
