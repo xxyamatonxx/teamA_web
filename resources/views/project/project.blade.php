@@ -5,12 +5,15 @@
 <!--プロジェクト一覧-->
 <div class="container">
     @foreach ($projects as $project)
+    @if ($project->release == 1)
     <a href="{{ route('projects.show' , $project->id )}}">
         <div class="all_page">
             <div class="box">
                 <div class="project_all">
-                    <div class="project_image">
-                        <img src="{{ Storage::url($project->image) }}">
+                    <div class="project_imageBox">
+                        <div class="project_image">
+                            <img src="{{ Storage::url($project->image) }}">
+                        </div>
                     </div>
                     <!--プロジェクトタイトル表示-->
                     <div class="project_title">
@@ -26,6 +29,9 @@
                 </div>
             </div>
     </a>
+    @endif
+
+
 
     @endforeach
 </div>

@@ -4,8 +4,10 @@
 <div class="show_title">
     <h1>{{$project->title}}</h1>
 </div>
-<div class="show_image">
-    <img class="show_img" src="{{ Storage::url($project->image) }}">
+<div class="show_imageBox">
+    <div class="show_image">
+        <img class="show_img" src="{{ Storage::url($project->image) }}">
+    </div>
 </div>
 <!--プロジェクト詳細↓-->
 <div class="show_overview">
@@ -22,13 +24,15 @@
 </div>
 
 @foreach ($rewards as $reward)
-<div>
+<div class="rewards_box">
     <p>タイトル:{{$reward->title}}</p>
     <p>説明:{{$reward->overview}}</p>
     <p>金額:{{$reward->price}}</p>
     <form action="{{route('support.store',$reward->id)}}" method="post">
         @csrf
-        <button type=" submit" onclick="return confirm('支援します。よろしいですか？')">支援する</button>
+        <div class="sienn">
+            <button type=" submit" onclick="return confirm('支援します。よろしいですか？')">支援する</button>
+        </div>
     </form>
 </div>
 @endforeach

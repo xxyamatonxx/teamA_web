@@ -20,9 +20,20 @@
     width: 250.66px;
 }
 
-.project_image{
+.project_imageBox{
+    position: relative;
     height: 159.77px;
-    width: 250.66px
+    width: 250.66px;
+}
+
+.project_image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .project_title{
@@ -43,6 +54,8 @@
     border-radius: 10px;
 }
 
+/*詳細ページ*/
+
 .show_title{
     width:  1200px;
     height: 145.11px;
@@ -53,13 +66,25 @@
     padding: 20px;
 }
 
-.show_image{
+.show_imageBox{
+    position: relative;
     width: 650px;
     height:432.95px;
     margin: 20px;
     float: left;
     padding: 20px;
 }
+
+.show_image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .show_img{
     max-width: 500px;
     max-height: 500px;
@@ -70,6 +95,7 @@
     height: 126px;
     position:relative;
     top: 500px;
+    left: 25px;
     background-color: #f6f8fa;
     box-shadow: #e3e4e8 0 4px 0;
     border-radius: 5px;
@@ -77,10 +103,9 @@
 }
 
 .overview_text{
-    width: 640px;
-    height: 120px;
     position: absolute;
-    margin: 30px;
+    width: 100%;
+    height: 100%x;
     font-family: "Open Sans", "Myriad", Helvetica, Arial, "Noto Sans JP", sans-serif;
     text-align: left;
     color: black;
@@ -91,8 +116,8 @@
     width: 424px;
     height: 455px;
     position:relative;
-    left: 650px;
-    bottom: 130px;
+    left: 600px;
+    bottom: 150px;
     padding: 15px;
 }
 
@@ -119,16 +144,6 @@ p.now{
 .now_now{
     background-color: lightyellow;
     border-radius: 10px;
-}
-
-.show_support{
-    width: 300px;
-    height: 79px;
-    position:relative;
-    left: 760px;
-    bottom: 60px;
-    background-color: mediumpurple;
-    border-radius: 5px;
 }
 
 .support_text{
@@ -159,4 +174,17 @@ p.now{
 /* リターン関連 */
 .reward{
     margin: 10px;
+}
+/*rewards*/
+.rewards_box{
+    width: 300px;
+    height: 120px;
+    position:relative;
+    left: 730px;
+    bottom: 90px;
+    background-color: thistle;
+    border-radius: 5px;
+}
+.sienn{
+    text-align: center;
 }
