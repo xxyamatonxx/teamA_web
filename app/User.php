@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 //use Illuminate\Auth\Passwords\CanResetPassword;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -41,14 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * Send the password reset notification.
-     *
-     * @param  string  $token
-     * @return void
-     */
-    // public function sendPasswordResetNotification($token)
-    // {
-    //     $this->notify(new ResetPasswordNotification($token));
-    // }
+    public function routeNotificationForSlack($notification)
+    {
+        return 'https://hooks.slack.com/services/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';
+    }
+
+
 }

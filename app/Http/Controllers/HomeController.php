@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Project;
 use App\User;
-
+//use Illuminate\Notifications\Messages\SlackMessage;
+use App\Notifications\SlackNotification;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,7 @@ class HomeController extends Controller
         $id = $request->id;
         $user_data = Auth::user($id);
         $projects = Auth::user($id)->projects->all();
-        // dd($user_data);
+        //dd($projects);
         return view('home',['user_data' => $user_data,'projects' => $projects]);
     }
 
@@ -54,9 +55,16 @@ class HomeController extends Controller
         // $password = $user->password;
         // dd($password);
         $user->save();
-        return view('home',['user_data' => $user_data, 'user_id' => $user_id])->with('update_password_success', 'パスワードを変更しました。');
+        $projects = Auth::user($user_id)->projects->all();
+        return view('home',['user_data' => $user_data, 'user_id' => $user_id,'projects' => $projects]);
     
        // return redirect()->back()->with('update_password_success', 'パスワードを変更しました。');
+    }
+
+    public function toSlack(){
+        $slack = new SlackNotification;
+        $me =$slack->toSlack();
+        dd($me);
     }
     
 }

@@ -75,11 +75,11 @@
                 </div>
             </div>
         </nav>
-
+        </div>
         <main class="main">
             @yield('content')
         </main>
-    </div>
+    
 
     <fooder class="fooder">
       <section class="fooder_a">
