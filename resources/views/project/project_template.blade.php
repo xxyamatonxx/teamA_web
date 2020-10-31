@@ -1,6 +1,6 @@
  <!--プロジェクト一覧-->
  <div class="container">
- @foreach ($projects as $project)
+ @forelse ($projects as $project)
     <a href="{{ route('projects.show' , $project->id )}}">
     <div class="all_page">
     <div class="box">
@@ -22,6 +22,7 @@
      </div>
      </div>
      </a>
-
- @endforeach
+ @empty
+     <p>プロジェクトはまだありません</p>
+ @endforelse
 </div>

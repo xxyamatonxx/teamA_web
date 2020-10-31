@@ -31,7 +31,6 @@ class RewardController extends Controller
             'price' => ['required', 'integer', 'min:1','max:1000000'],
         ];
         $this->validate($request, $rules);
-
         Reward::create([
             'project_id' => $id,
             'title' => $request->title,

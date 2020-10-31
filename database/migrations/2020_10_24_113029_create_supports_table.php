@@ -16,6 +16,7 @@ class CreateSupportsTable extends Migration
         Schema::create('supports', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->foreignId('project_id');
             $table->foreignId('reward_id');
             $table->timestamps();
         });
